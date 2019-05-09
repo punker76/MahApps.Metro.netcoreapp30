@@ -7,26 +7,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0121" />
+        <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha*" />
     </ItemGroup>
 
     <ItemGroup>
         <Page Update="@(Page)" SubType="Designer" Generator="MSBuild:Compile" />
     </ItemGroup>
+
     <ItemGroup>
         <Compile DependentUpon="%(Filename)" SubType="Code" Update="**\obj\**\*.g$(DefaultLanguageSourceExtension)" />
         <Compile DependentUpon="%(Filename)" SubType="Designer" Update="**\*.xaml$(DefaultLanguageSourceExtension)" />
     </ItemGroup>
-
-    <!--
-    Workaround to fix IntelliSense file generation for XAML projects
-    ISSUE: https://github.com/dotnet/project-system/issues/2488
-  -->
-    <Target Name="_SdkDesignTimeBuildAndIntelliSenseWorkaround" AfterTargets="_CheckCompileDesignTimePrerequisite">
-        <PropertyGroup>
-            <BuildingProject>false</BuildingProject>
-            <DesignTimeBuild>true</DesignTimeBuild>
-        </PropertyGroup>
-    </Target>
 
 </Project>
