@@ -4,21 +4,28 @@
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
-                      xmlns:local="clr-namespace:MahApps.Metro.netcoreapp30"
+                      xmlns:markdig="clr-namespace:Markdig.Wpf;assembly=Markdig.Wpf"
                       mc:Ignorable="d"
                       GlowBrush="{DynamicResource AccentColorBrush}"
                       WindowStartupLocation="CenterScreen"
-                      Title="MainWindow" Height="450" Width="800">
+                      TitleCharacterCasing="Normal"
+                      Title="MahApps.Metro"
+                      Height="450" Width="800">
     <controls:MetroWindow.WindowButtonCommands>
         <controls:WindowButtonCommands Style="{DynamicResource MahApps.Metro.Styles.WindowButtonCommands.Win10}" />
     </controls:MetroWindow.WindowButtonCommands>
+    <FrameworkElement.CommandBindings>
+        <CommandBinding Command="{x:Static markdig:Commands.Hyperlink}" Executed="OpenHyperlink" />
+    </FrameworkElement.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="9*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Label Content="Hello .NET Core and MahApps.Metro!" HorizontalAlignment="Center" VerticalAlignment="Center"
-               FontSize="40"/>
-        <Button Content="Exit" Grid.Row="1" FontSize="20" Click="ButtonExit_Click"/>
+        <markdig:MarkdownViewer x:Name="Viewer"
+                                AutomationProperties.Name="README"
+                                VerticalAlignment="Stretch"
+                                HorizontalAlignment="Stretch" />
+        <Button Content="Exit" Grid.Row="1" FontSize="20" Click="ButtonExit_Click" />
     </Grid>
 </controls:MetroWindow>

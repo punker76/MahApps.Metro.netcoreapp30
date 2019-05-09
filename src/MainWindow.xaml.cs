@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.Reflection;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 
 namespace MahApps.Metro.netcoreapp30
@@ -24,6 +13,20 @@ namespace MahApps.Metro.netcoreapp30
         public MainWindow()
         {
             InitializeComponent();
+
+            this.Loaded += MainWindow_Loaded;
+        }
+
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            var reader = new AssemblyTextFileReader(Assembly.GetExecutingAssembly());
+            var readme = await reader.ReadFileAsync("README.md");
+            this.Viewer.Markdown = readme;
+        }
+
+        private void OpenHyperlink(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        {
+            Process.Start("explorer.exe", e.Parameter.ToString());
         }
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)

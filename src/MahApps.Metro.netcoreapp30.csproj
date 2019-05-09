@@ -4,10 +4,17 @@
         <OutputType>WinExe</OutputType>
         <TargetFramework>netcoreapp3.0</TargetFramework>
         <UseWPF>true</UseWPF>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
     </PropertyGroup>
 
     <ItemGroup>
+      <EmbeddedResource Include="../README.md" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha*" />
+        <PackageReference Include="Markdig" Version="*" />
+        <PackageReference Include="Markdig.Wpf" Version="*" />
     </ItemGroup>
 
     <ItemGroup>
