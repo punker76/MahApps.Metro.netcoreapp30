@@ -6,13 +6,13 @@
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                       xmlns:markdig="clr-namespace:Markdig.Wpf;assembly=Markdig.Wpf"
                       mc:Ignorable="d"
-                      GlowBrush="{DynamicResource AccentColorBrush}"
+                      GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
                       WindowStartupLocation="CenterScreen"
                       TitleCharacterCasing="Normal"
                       Title="MahApps.Metro"
                       Height="450" Width="800">
     <controls:MetroWindow.WindowButtonCommands>
-        <controls:WindowButtonCommands Style="{DynamicResource MahApps.Metro.Styles.WindowButtonCommands.Win10}" />
+        <controls:WindowButtonCommands Style="{DynamicResource MahApps.Styles.WindowButtonCommands.Win10}" />
     </controls:MetroWindow.WindowButtonCommands>
     <FrameworkElement.CommandBindings>
         <CommandBinding Command="{x:Static markdig:Commands.Hyperlink}" Executed="OpenHyperlink" />
