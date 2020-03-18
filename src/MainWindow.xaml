@@ -21,11 +21,20 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <markdig:MarkdownViewer x:Name="Viewer"
                                 AutomationProperties.Name="README"
                                 VerticalAlignment="Stretch"
                                 HorizontalAlignment="Stretch" />
         <Button Content="Exit" Grid.Row="1" FontSize="20" Click="ButtonExit_Click" />
+        <controls:RangeSlider Grid.Row="2"
+                              Style="{DynamicResource MahApps.Styles.RangeSlider.Win10}"
+                              Margin="10 5"
+                              Minimum="0" Maximum="100" LowerValue="10"
+                              UpperValue="30" AutoToolTipPlacement="TopLeft"
+                              AutoToolTipPrecision="2" MoveWholeRange="True"
+                              IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                              ExtendedMode="True" />
     </Grid>
 </controls:MetroWindow>
