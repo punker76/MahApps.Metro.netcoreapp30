@@ -1,11 +1,11 @@
 # MahApps.Metro.netcoreapp30
 
-Hello .NET Core 3 with MahApps.Metro (v2.0 alpha)!
+Hello .NET Core 3 together with `MahApps.Metro` (v2.0 alpha)!
 
 ## Prerequisites
 
-- [Visual Studio 2019 16.3.x or Preview](https://visualstudio.microsoft.com)
-- at least [.NET Core 3.0.100 SDK (and runtime)](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0.0/3.0.0-download.md)
+- [Visual Studio 2019 16.5.x or Preview](https://visualstudio.microsoft.com)
+- at least [.NET Core 3.x SDK (and runtime)](https://dotnet.microsoft.com/download)
 
 ## Clone the repo
 
