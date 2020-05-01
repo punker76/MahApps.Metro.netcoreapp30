@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using ControlzEx.Theming;
 
 namespace MahApps.Metro.netcoreapp30
 {
@@ -11,8 +12,8 @@ public partial class App : Application
     {
         base.OnStartup(e);
 
-        ThemeManager.IsAutomaticWindowsAppModeSettingSyncEnabled = true;
-        ThemeManager.SyncThemeWithWindowsAppModeSetting();
+        ThemeManager.Current.ThemeSyncMode = ThemeSyncMode.SyncWithAppMode;
+        ThemeManager.Current.SyncTheme(ThemeSyncMode.SyncWithAppMode);
     }
 }
 }
